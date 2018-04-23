@@ -1,0 +1,25 @@
+{
+  "name": "flat-wrap",
+  "version": "1.0.0",
+  "description": "Flattening/unflattening nested objects without losing keys for blank objects / empty arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/index.js"
+  },
+  "author": "Gradeup",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  },
+	"keywords": [
+		"flat",
+		"json",
+		"flatten",
+		"unflatten",
+		"split",
+		"object",
+		"nested",
+		"redis",
+		"hmset"
+	],
+}
