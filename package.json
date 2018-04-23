@@ -11,15 +11,19 @@
   "devDependencies": {
     "ava": "^0.25.0"
   },
-	"keywords": [
-		"flat",
-		"json",
-		"flatten",
-		"unflatten",
-		"split",
-		"object",
-		"nested",
-		"redis",
-		"hmset"
-	],
+  "keywords": [
+    "flat",
+    "json",
+    "flatten",
+    "unflatten",
+    "split",
+    "object",
+    "nested",
+    "redis",
+    "hmset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piyush44903/flat-wrap.git"
+  },
 }
