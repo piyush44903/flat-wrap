@@ -1,6 +1,6 @@
 import test from 'ava';
 const assert = require('assert');
-const flatRedis = require('../index');
+const flatRedis = require('.');
 const { flatten, unflatten } = flatRedis;
 
 const atomicTypes = {
