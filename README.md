@@ -1,4 +1,4 @@
-# flat-wrap
+# flat-wrap [![Build Status](https://travis-ci.org/piyush44903/flat-wrap.svg?branch=master)](https://travis-ci.org/piyush44903/flat-wrap)
 Flattening/unflattening nested objects without losing keys for blank objects / empty arrays
 
 ## Installation
