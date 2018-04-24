@@ -24,6 +24,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/piyush44903/flat-wrap.git"
-  },
+    "url": "git+https://github.com/piyush44903/flat-wrap.git"
+  }
 }
