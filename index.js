@@ -140,10 +140,12 @@ function recUnflatten({ baseObj, depth = 1, config }) {
 	}
 
 	// Pre pass, check if all the keys are numbers, make an array
-	const shouldBeArr = Object.keys(baseObj).reduce((acc, key) => {
+	const arrayDetection = Object.keys(baseObj).reduce((acc, key) => {
 		if (key.indexOf(delimiter) < 0) {
 			const nkey = getUnflattenedkey(key);
 			if (nkey === Number(key)) {
+				acc.keyCount++;
+				acc.maxKey = (nkey > acc.maxKey) ? nkey : acc.maxKey;
 				return acc;
 			}
 		}
@@ -151,11 +153,20 @@ function recUnflatten({ baseObj, depth = 1, config }) {
 		const keyBase = key.split(delimiter).shift();
 		const nkey = getUnflattenedkey(keyBase);
 		if (nkey === Number(keyBase)) {
+			if (!acc.nested[nkey]) {
+				acc.nested[nkey] = 1;
+				acc.keyCount++;
+			}
+			acc.maxKey = (nkey > acc.maxKey) ? nkey : acc.maxKey;
 			return acc;
 		}
 
-		return false;
-	}, true);
+		acc.shouldBeArr = false;
+		return acc;
+	}, { maxKey: 0, keyCount: 0, nested: {}, shouldBeArr: true });
+
+	let { shouldBeArr, maxKey, keyCount } = arrayDetection;
+	shouldBeArr = shouldBeArr && (maxKey === (keyCount - 1));
 
 	if (debug) {
 		console.log({ baseObj, depth, config, shouldBeArr });

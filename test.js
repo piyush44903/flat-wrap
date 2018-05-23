@@ -17,6 +17,7 @@ const sampleNestedObjects = {
   emptyArray: [],
   blankNulls: { a: 12,b: { c:10, f: { g: {}, h: 19 }}, d: {}, e: [], k: null },
   nestedArrays: { a: 12,b: { c:10, f: { g: {}, h: 19, i: [10,20,30] }}, d: { j: [{ l: { m: 10 }}, { n: 10 }] }, e: [], k: null },
+  numberKeyedObject: { a: 10, b: [{ k: 'sad', l: 'mad' }, { m: { a: 'prime', b: 'first', c: [10, 20] } }, 10], c: { 1000: 'Not an array '} },
 };
 
 const sampleNestedTargets = {
@@ -41,6 +42,16 @@ const sampleNestedTargets = {
     'd.j.1.n': 10,
     e: 'E_ARR',
     k: 'E_NULL',
+  },
+  numberKeyedObject: { a: 10,
+    'b.0.k': 'sad',
+    'b.0.l': 'mad',
+    'b.1.m.a': 'prime',
+    'b.1.m.b': 'first',
+    'b.1.m.c.0': 10,
+    'b.1.m.c.1': 20,
+    'b.2': 10,
+    'c.1000': 'Not an array ',
   },
 };
 
